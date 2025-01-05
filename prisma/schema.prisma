@@ -12,3 +12,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id             String          @id @default(uuid())
+  email          String // This is a required field.
+  authentication Authentication?
+}
+
+model Authentication {
+  id           String  @id @default(uuid())
+  password     String
+  salt         String?
+  sessionToken String?
+  userId       String  @unique
+  user         User    @relation(fields: [userId], references: [id])
+}

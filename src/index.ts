@@ -7,7 +7,7 @@ import cors from 'cors';
 import { PrismaClient} from '@prisma/client'
 
 const app = express();
-const prisma = PrismaClient();
+const prisma = new PrismaClient();
 
 app.use(cors({
     credentials: true
@@ -26,7 +26,8 @@ server.listen(5000,
 )
 
 async function main() {
-
+    const allUsers = prisma.user.findMany()
+    console.log(allUsers)
 }
 
 main()
