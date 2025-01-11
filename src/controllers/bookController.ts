@@ -1,15 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../libs/prismaClient"
 
-export interface Context {
-    prisma: PrismaClient
+export const getAllBooks = async (req: any, res: any) => {
+    const allBooks = await prisma.book.findMany();
+    res.json(allBooks);
 }
 
-const globalForPrisma = globalThis as unknown as {prisma: PrismaClient}
-
-export const prisma = globalForPrisma.prisma || new PrismaClient();
-
-globalForPrisma.prisma = prisma
-
-export const context: Context = {
-    prisma: prisma,
+export const AddBook = async (req: any, res: any) => {
+    
 }

@@ -1,7 +1,8 @@
-import express, {Request, Response}  from "express"
+import express from "express"
+import  {getAllBooks} from  '../controllers/bookController'
 
 const router = express.Router()
 
-module.exports = () => {
-    router.get('/', )
-}
+router.get('/', getAllBooks)
+
+export default router;

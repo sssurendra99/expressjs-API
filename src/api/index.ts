@@ -1,24 +1,14 @@
 import express from 'express';
-import { PrismaClient} from '@prisma/client'
+import morgan from 'morgan'
 import bodyParser from 'body-parser';
+import books from '../routes/book';
 
 export const app = express();
-const prisma = new PrismaClient();
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Adding logging behaviour.
+app.use(morgan('combined'))
 
-async function main() {
-    
-}
-
-main()
-    .then(async() => {
-        await prisma.$disconnect()
-    })
-    .catch(async(e) => {
-        console.error(e)
-        await prisma.$disconnect()
-        process.exit(1)
-    })
+app.use('/api/books', books)
