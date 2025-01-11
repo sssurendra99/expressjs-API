@@ -1,4 +1,4 @@
-# expressjs-API
+# Express-API
 Adapting the .NET development skills to express JS nd node JS.
 
 # Tech stack
@@ -46,6 +46,9 @@ npx prisma format
 ```bash
 npx prisma migrate dev --name <Migration Name>
 ```
+## Milestones 
+- Added a endpoint to get the books.
+- Added the logging behaviour as a middleware.
 
 ## Resources
 - [Prisma Documentation](https://www.prisma.io/docs/orm)
