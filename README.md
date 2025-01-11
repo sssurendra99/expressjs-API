@@ -12,6 +12,7 @@ Adapting the .NET development skills to express JS nd node JS.
 # My Observations while learning the technology -
 - Not that opinionated like .NET.
 - Important learning how the node js work behind the scenes.
+- Got the chance to learn the context object in the node js.
 
 ## Prisma
 
