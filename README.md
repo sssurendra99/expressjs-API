@@ -21,7 +21,7 @@ Adapting the .NET development skills to express JS nd node JS.
 - There you have to add the generator and the data source for your preferred database.
 - You can have multiple schema files but not the model files.
 - This is how it looks like for my postgresql setup.
-```json
+```bash
 generator client {
   provider = "prisma-client-js"
 }
